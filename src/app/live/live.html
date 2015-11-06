@@ -1,0 +1,27 @@
+<div class="live">
+    <md-content layout-padding>
+        <md-grid-list
+            data-md-cols="6"
+            data-md-row-height="30"
+        >
+            <md-grid-tile data-ng-repeat="command in vm.commands | orderBy : 'name'">
+                <md-checkbox flex data-ng-model="command.active">
+                    {{command.name}}
+                </md-checkbox>
+            </md-grid-tile>
+        </md-grid-list>
+    </md-content>
+
+    <md-content layout-padding>
+        <md-grid-list
+            data-md-cols-gt-md="4"
+            data-md-cols="3"
+            data-md-row-height="220"
+            data-md-gutter="16px"
+        >
+            <md-grid-tile data-ng-repeat="command in vm.commands | filter : {active: true} | orderBy : 'name'" style="border: 1px solid red;">
+                <command command="command"></command>
+            </md-grid-tile>
+        </md-grid-list>
+    </md-content>
+</div>

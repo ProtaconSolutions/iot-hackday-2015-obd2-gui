@@ -6,7 +6,7 @@
       'iot.config',
       'iot.core',
       'iot.layout',
-      'iot.dashboard'
+      'iot.live'
     ])
   ;
 })();

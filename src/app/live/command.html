@@ -1,0 +1,15 @@
+<div flex>
+    <md-list flex>
+        <md-list-item class="title">
+            <p>{{vm.command.name}}</p>
+
+            <span style="color: red;">{{vm.values[0].unit}}</span>
+        </md-list-item>
+
+        <md-list-item ng-repeat="data in vm.values.slice().reverse() | limitTo : 6">
+            <p>{{vm.getDate(data.time)}}</p>
+
+            {{vm.getValue(data.value, data.unit)}}
+        </md-list-item>
+    </md-list>
+</div>

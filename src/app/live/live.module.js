@@ -2,11 +2,11 @@
   'use strict';
 
   /**
-   * Initialization of iot.dashboard module.
+   * Initialization of iot.live module.
    *
    * @namespace Modules
    */
   angular
-    .module('iot.dashboard', [])
+    .module('iot.live', [])
   ;
 })();
