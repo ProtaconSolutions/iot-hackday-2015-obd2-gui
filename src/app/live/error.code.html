@@ -1,0 +1,9 @@
+<div class="md-list-item-text">
+    <h3>{{ vm.getDate() }}</h3>
+
+    <ul style="margin: 0">
+        <li data-ng-repeat="dtc in vm.error.DTCs">
+            {{dtc[1]}} <code>{{dtc[0]}}</code>
+        </li>
+    </ul>
+</div>

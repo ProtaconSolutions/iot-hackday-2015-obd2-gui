@@ -47,7 +47,8 @@
               resolve: {
                 _codesActive: _codesActive,
                 _codes: _codes,
-                _command: _command
+                _command: _command,
+                _errors: _errors
               }
             }
           }
@@ -101,4 +102,18 @@
     return $firebaseObject(dataservice.getReference('ACTIVE_COMMAND'));
   }
 
+  /**
+   * @name      _errors
+   * @desc      '_errors' resolve function.
+   * @memberOf  Routes.Live
+   * @ngInject
+   *
+   * @param   {AngularFireObjectService} $firebaseObject
+   * @param   {Factories.Dataservice}    dataservice
+   * @returns {ng.IPromise<TResult>}
+   * @private
+   */
+  function _errors($firebaseObject, dataservice) {
+    return $firebaseObject(dataservice.getReference('ERROR_CODES'));
+  }
 })();

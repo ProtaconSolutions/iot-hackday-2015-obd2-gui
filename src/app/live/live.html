@@ -1,4 +1,12 @@
 <div class="live">
+    <h3>Dashboard</h3>
+
+    <dashboard dashboard="vm.dashboard"></dashboard>
+
+    <hr />
+
+    <h3>ODB sensors</h3>
+
     <md-content layout-padding>
         <md-grid-list
             data-md-cols="6"
@@ -19,9 +27,25 @@
             data-md-row-height="220"
             data-md-gutter="16px"
         >
-            <md-grid-tile data-ng-repeat="command in vm.commands | filter : {active: true} | orderBy : 'name'" style="border: 1px solid red;">
+            <md-grid-tile data-ng-repeat="command in filtered = (vm.commands | filter : {active: true} | orderBy : 'name')" style="border: 1px solid red;">
                 <command command="command"></command>
             </md-grid-tile>
         </md-grid-list>
+
+        <div data-ng-if="filtered == 0">
+            Please select ODB sensors to track...
+        </div>
     </md-content>
+
+    <hr />
+
+    <h3>Error codes</h3>
+
+    <md-button class="md-raised">Read error codes</md-button> <md-button class="md-raised">Reset error codes</md-button>
+
+    <md-list>
+        <md-list-item class="md-2-line" ng-repeat="error in vm.errors">
+            <error-code error="error"></error-code>
+        </md-list-item>
+    </md-list>
 </div>

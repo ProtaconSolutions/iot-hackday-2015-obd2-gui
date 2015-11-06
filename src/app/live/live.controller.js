@@ -23,13 +23,15 @@
     $scope, $firebaseObject,
     _,
     dataservice,
-    _codesActive, _codes, _command
+    _codesActive, _codes, _command, _errors
   ) {
     var vm = this;
 
     vm.codes = _codes;
     vm.codesActive = _codesActive;
     vm.command = _command;
+    vm.errors = _errors;
+
     vm.commands = [];
 
     $scope.$watch('vm.codes', function(codes) {
