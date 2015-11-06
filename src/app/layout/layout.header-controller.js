@@ -19,5 +19,9 @@
    *
    * @constructor
    */
-  function HeaderController() {}
+  function HeaderController(_command) {
+    var vm = this;
+
+    vm.currentState = _command;
+  }
 })();

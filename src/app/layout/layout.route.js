@@ -40,7 +40,10 @@
             header: {
               templateUrl: '/iot/layout/header.html',
               controller: 'HeaderController',
-              controllerAs: 'vm'
+              controllerAs: 'vm',
+              resolve: {
+                _command: _command
+              }
             },
             footer: {
               templateUrl: '/iot/layout/footer.html',
@@ -51,5 +54,20 @@
         }
       }
     ];
+  }
+
+  /**
+   * @name      _command
+   * @desc      '_command' resolve function.
+   * @memberOf  Routes.Layout
+   * @ngInject
+   *
+   * @param   {AngularFireObjectService} $firebaseObject
+   * @param   {Factories.Dataservice}    dataservice
+   * @returns {ng.IPromise<TResult>}
+   * @private
+   */
+  function _command($firebaseObject, dataservice) {
+    return $firebaseObject(dataservice.getReference('ACTIVE_COMMAND'));
   }
 })();
