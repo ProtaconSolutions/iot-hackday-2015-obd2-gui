@@ -1,0 +1,41 @@
+<div flex>
+    <md-list flex>
+        <md-list-item class="title">
+            <p>{{vm.name}}</p>
+
+            <span style="color: red;">{{vm.values[0].unit}}</span>
+        </md-list-item>
+
+        <md-list-item ng-repeat="data in vm.values.slice().reverse() | limitTo : 6">
+            <p>{{vm.getDate(data.time)}}</p>
+
+            {{vm.getValue(data.value, data.unit)}}
+        </md-list-item>
+    </md-list>
+
+
+    <!--
+
+    <h3>{{vm.name}} <span style="color: red;">{{vm.values[0].unit}}</span></h3>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Value</th>
+            <th>Stamp</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-ng-repeat="data in vm.values.slice().reverse() | limitTo : 5">
+            <td>
+                {{vm.getValue(data.value, data.unit)}}
+            </td>
+            <td>
+                {{vm.getDate(data.time)}}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    -->
+</div>

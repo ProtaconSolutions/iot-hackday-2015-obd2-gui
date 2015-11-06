@@ -19,6 +19,7 @@
     "src"
   ],
   "dependencies": {
+    "jquery": "~2.1.4",
     "angular": "1.4.1",
     "angular-animate": "1.4.1",
     "angular-loading-bar": "0.7.1",
@@ -27,7 +28,20 @@
     "angular-ui-router": "0.2.15",
     "angularfire": "1.1.1",
     "mdi": "1.1.34",
-    "moment": "2.10.3"
+    "moment": "2.10.3",
+    "kendo-ui-all": "*",
+    "lodash": "~3.10.1",
+    "angular-gaugejs": "*"
+  },
+  "overrides": {
+    "kendo-ui-all": {
+      "main": [
+        "js/kendo.all.min.js",
+        "js/kendo.angular.min.js",
+        "styles/kendo.common.min.css",
+        "styles/kendo.default.min.css"
+      ]
+    }
   },
   "devDependencies": {},
   "resolutions": {

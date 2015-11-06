@@ -45,8 +45,9 @@
               controller: 'DashboardController',
               controllerAs: 'vm',
               resolve: {
-                _speed: _speed,
-                _rpm: _rpm
+                _dashboard: _dashboard,
+                _errorCodes: _errorCodes,
+                _liveData: _liveData
               }
             }
           }
@@ -56,7 +57,7 @@
   }
 
   /**
-   * @name      _speed
+   * @name      _dashboard
    * @desc      '_speed' resolve function.
    * @memberOf  Routes.Dashboard
    * @ngInject
@@ -66,12 +67,12 @@
    * @returns {ng.IPromise<TResult>}
    * @private
    */
-  function _speed($firebaseArray, dataservice) {
-    return [];
+  function _dashboard($firebaseArray, dataservice) {
+    return $firebaseArray(dataservice.getReference('DASHBOARD'));
   }
 
   /**
-   * @name      _rpm
+   * @name      _liveData
    * @desc      '_rpm' resolve function.
    * @memberOf  Routes.Dashboard
    * @ngInject
@@ -81,7 +82,22 @@
    * @returns {ng.IPromise<TResult>}
    * @private
    */
-  function _rpm($firebaseArray, dataservice) {
-    return [];
+  function _liveData($firebaseArray, dataservice) {
+    return $firebaseArray(dataservice.getReference('SUPPORTED_COMMANDS'));
+  }
+
+  /**
+   * @name      _liveData
+   * @desc      '_rpm' resolve function.
+   * @memberOf  Routes.Dashboard
+   * @ngInject
+   *
+   * @param   {AngularFireArrayService} $firebaseArray
+   * @param   {Factories.Dataservice}   dataservice
+   * @returns {ng.IPromise<TResult>}
+   * @private
+   */
+  function _errorCodes($firebaseArray, dataservice) {
+    return $firebaseArray(dataservice.getReference('ERROR_CODES'));
   }
 })();

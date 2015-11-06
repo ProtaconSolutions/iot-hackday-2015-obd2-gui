@@ -1,50 +1,66 @@
 .dashboard-container {
-  main.md-padding {
-    padding: 0;
-  }
+  md-list-item,
+  md-list-item .md-list-item-inner {
+    min-height: 30px;
 
-  md-input-container {
-    padding-bottom: 0;
-    padding-left: 10px;
-  }
-}
-
-.dashboard {
-  margin: 0;
-  padding: 0;
-
-  .messages {
-    border-top: none;
-    border-bottom: none;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 100vh;
-    padding: 0 10px;
-
-    code {
-      background-color: transparent;
-    }
-
-    .time {
-      position: absolute;
-      left: 5px;
-    }
-
-    .message {
-      margin-left: 155px;
+    &.title {
+      font-weight: bold;
+      border-bottom: 1px solid #efefef;
     }
   }
 
-  .input-group {
-    .form-control,
-    .input-group-addon {
-      &:first-child {
-        border-top-left-radius: 0;
-      }
-    }
+  #gauge-container {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 614px;
+    height: 324px;
 
-    .input-group-btn:last-child > .btn {
-      border-top-right-radius: 0;
+    border: 1px solid red;
+
+    /*background: transparent url("../content/dataviz/dashboards/car-dashboard.png") no-repeat 50% 50%;*/
+
+    div {
+      float: left;
+      position: relative;
+      border: 1px solid red;
+    }
+  }
+
+  .k-gauge {
+    float: left;
+  }
+
+  #rpm {
+    width: 142px;
+    height: 147px;
+    margin: 85px 0 0 38px;
+  }
+
+  #kmh {
+    width: 216px;
+    height: 216px;
+    margin: 57px 0 0 20px;
+  }
+
+
+
+#fuel {
+    width: 77px;
+    height: 84px;
+
+    margin: 90px 0 0 68px;
+  }
+
+  #water-temprature {
+    width: 84px;
+    height: 80px;
+
+    margin: -7px 0 0 62px;
+  }
+
+  @media screen and (max-width: 1023px) {
+    #gauge-container {
+      display: none;
     }
   }
 }

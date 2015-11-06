@@ -12,5 +12,6 @@
     .module('iot.core')
     .constant('moment', moment)
     .constant('Firebase', Firebase)
+    .constant('_', _)
   ;
 })();
