@@ -48,7 +48,8 @@
                 _codesActive: _codesActive,
                 _codes: _codes,
                 _command: _command,
-                _errors: _errors
+                _errors: _errors,
+                _dashboard: _dashboard
               }
             }
           }
@@ -113,7 +114,22 @@
    * @returns {ng.IPromise<TResult>}
    * @private
    */
-  function _errors($firebaseObject, dataservice) {
-    return $firebaseObject(dataservice.getReference('ERROR_CODES'));
+  function _errors($firebaseArray, dataservice) {
+    return $firebaseArray(dataservice.getReference('ERROR_CODES'));
+  }
+
+  /**
+   * @name      _dashboard
+   * @desc      '_dashboard' resolve function.
+   * @memberOf  Routes.Live
+   * @ngInject
+   *
+   * @param   {AngularFireObjectService} $firebaseObject
+   * @param   {Factories.Dataservice}    dataservice
+   * @returns {ng.IPromise<TResult>}
+   * @private
+   */
+  function _dashboard($firebaseArray, dataservice) {
+    return $firebaseArray(dataservice.getReference('DASHBOARD'));
   }
 })();

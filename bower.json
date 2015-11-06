@@ -31,7 +31,8 @@
     "moment": "2.10.3",
     "kendo-ui-all": "*",
     "lodash": "~3.10.1",
-    "angular-gaugejs": "*"
+    "angular-gaugejs": "*",
+    "ngRadialGauge": "*"
   },
   "overrides": {
     "kendo-ui-all": {

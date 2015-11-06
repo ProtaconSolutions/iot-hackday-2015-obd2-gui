@@ -20,10 +20,10 @@
    * @constructor
    */
   function LiveController(
-    $scope, $firebaseObject,
+    $scope, $firebaseObject, $timeout,
     _,
     dataservice,
-    _codesActive, _codes, _command, _errors
+    _codesActive, _codes, _command, _errors, _dashboard
   ) {
     var vm = this;
 
@@ -31,6 +31,7 @@
     vm.codesActive = _codesActive;
     vm.command = _command;
     vm.errors = _errors;
+    vm.dashboard = _dashboard;
 
     vm.commands = [];
 
@@ -79,11 +80,13 @@
       vm.command.$value = '';
 
       vm.command.$save().then(function() {
-        vm.command.$value = 'LIVE_DATA';
+        vm.command.$value = (vm.codesActive.length === 0) ? '' : 'LIVE_DATA';
 
-        vm.command.$save().then(function() {
-          console.log('command toggled successfully');
-        });
+        $timeout(function() {
+          vm.command.$save().then(function() {
+            console.log('command toggled successfully');
+          });
+        }, 1000);
       });
     }
   }

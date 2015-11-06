@@ -12,6 +12,6 @@
       'ui.router',
       'firebase',
       'iot-templates',
-      'blocks.exception', 'blocks.logger', 'blocks.router', 'kendo.directives'
+      'blocks.exception', 'blocks.logger', 'blocks.router', 'ngRadialGauge'
     ]);
 })();

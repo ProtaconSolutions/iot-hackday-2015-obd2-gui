@@ -1,0 +1,50 @@
+<div>
+
+    <md-content layout-padding>
+        <md-grid-list class="dashboard-values"
+            data-md-cols="5"
+            data-md-row-height="110"
+        >
+            <md-grid-tile >
+                <span style="text-align: center;">
+                    <h1>{{vm.getValue('RPM').$value | number : 0}}</h1>
+                    <br >
+                    <h3>RPM</h3>
+                </span>
+            </md-grid-tile>
+
+            <md-grid-tile >
+                <span style="text-align: center;">
+                    <h1>{{vm.getValue('SPEED').$value}}km/h</h1>
+                    <br />
+                    <h3>Speed</h3>
+                </span>
+            </md-grid-tile>
+
+            <md-grid-tile >
+                <span style="text-align: center;">
+                    <h1>{{vm.getValue('COOLANT_TEMP').$value}}°C</h1>
+                    <br />
+                    <h3>Coolant temp</h3>
+                </span>
+            </md-grid-tile>
+
+            <md-grid-tile >
+                <span style="text-align: center;">
+                    <h1>{{vm.getValue('INTAKE_TEMP').$value}}°C</h1>
+                    <br />
+                    <h3>Intake temp</h3>
+                </span>
+            </md-grid-tile>
+
+            <md-grid-tile >
+                <span style="text-align: center;">
+                    <h1>{{vm.getValue('FUEL_LEVEL').$value | number : 0}}%</h1>
+                    <br />
+                    <h3>Fuel level</h3>
+                </span>
+            </md-grid-tile>
+        </md-grid-list>
+    </md-content>
+
+</div>
