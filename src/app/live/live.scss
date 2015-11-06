@@ -5,7 +5,7 @@
 
     &.title {
       font-weight: bold;
-      border-bottom: 1px solid #efefef;
+      border-bottom: 1px solid #b3b3b3;
     }
   }
 
@@ -21,5 +21,10 @@
     h1 {
       font-size: 400%;
     }
+  }
+
+  .command {
+    background-color: #e5e5e5;
+    border-radius: 10px;
   }
 }

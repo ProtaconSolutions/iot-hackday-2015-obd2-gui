@@ -27,7 +27,7 @@
             data-md-row-height="220"
             data-md-gutter="16px"
         >
-            <md-grid-tile data-ng-repeat="command in filtered = (vm.commands | filter : {active: true} | orderBy : 'name')" style="border: 1px solid red;">
+            <md-grid-tile data-ng-repeat="command in filtered = (vm.commands | filter : {active: true} | orderBy : 'name')" class="command">
                 <command command="command"></command>
             </md-grid-tile>
         </md-grid-list>
