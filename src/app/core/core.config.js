@@ -10,8 +10,8 @@
    *  }}
    */
   var config = {
-    appErrorPrefix: 'odb2l - Oh noes error',
-    appTitle: 'odb2'
+    appErrorPrefix: 'obd2l - Oh noes error',
+    appTitle: 'obd2'
   };
 
   /**
